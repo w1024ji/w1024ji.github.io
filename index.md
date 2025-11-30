@@ -1,5 +1,5 @@
-Here you can say lots of fun things about your site.
+I want to keep a blog about my projects!
 
-Maybe say a some things about yourself.
+Well... Now I am studying about data engineering.
 
-Or maybe what you plan to blog about.
+Hope I find this thing fun!
