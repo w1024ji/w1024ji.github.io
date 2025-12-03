@@ -1,5 +1,3 @@
----
-
 ## 🚀 Building a Modern Data Pipeline: AWS, Airflow, & Snowflake (Phase 1 Complete!)
 
 Hey everyone! As a self-starting data engineer, I’ve been tackling a hands-on project to master the modern cloud data stack. I wanted to move beyond tutorials and build a robust, end-to-end (E2E) pipeline from scratch.
@@ -19,7 +17,6 @@ Here's the powerful stack we chose to work with:
 | **Data Warehouse** | **Snowflake** | The final, powerful, and scalable destination for analytical data. |
 | **Big Data Processing** | **Apache Spark** | (Future Phase) Cleans, validates, and transforms large datasets. |
 
----
 
 ## 🏗️ Phase 1: Overcoming Environment Hell and Achieving First Success
 
@@ -39,7 +36,6 @@ We successfully configured the security and access layers:
 * **Airflow Credentials:** We secured the system by setting up a managed **PostgreSQL** database (via Docker Compose) and successfully created the **`admin`** user account.
 * **Cloud Connections:** We configured Airflow's **Connections** menu with the required **AWS IAM Access Keys** and **Snowflake User Credentials** to ensure secure communication.
 
----
 
 ## ✅ Phase 1: Pipeline Execution (E2E Success!)
 
@@ -53,7 +49,6 @@ After all the setup, we wrote our first basic Directed Acyclic Graph (**DAG**), 
 
 **Status:** The entire three-step process ran green! The foundational ETL pipeline connecting **Airflow to S3 and then to Snowflake** is now fully functional.
 
----
 
 ## ⏭️ Next Steps: Bringing in the Big Gun (Apache Spark)
 
