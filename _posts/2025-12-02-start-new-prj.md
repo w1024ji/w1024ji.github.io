@@ -1,4 +1,4 @@
-## 🚀 Building a Modern Data Pipeline: AWS, Airflow, & Snowflake (Phase 1 Complete!)
+## 🚀 Building a Modern Data Pipeline: AWS, Airflow and Snowflake (Phase 1 Complete!)
 
 Hey everyone! As a self-starting data engineer, I’ve been tackling a hands-on project to master the modern cloud data stack. I wanted to move beyond tutorials and build a robust, end-to-end (E2E) pipeline from scratch.
 
@@ -59,3 +59,10 @@ While the pipeline works, the current data transformation is basic. The next, mo
 We are currently battling a **`JAVA_HOME`** configuration issue in the Docker container. The `SparkSubmitOperator` cannot find the required Java runtime environment to launch the Spark process successfully. We are working on modifying the Dockerfile and environment variables to ensure Java is correctly configured.
 
 Once we resolve this Java configuration, we will successfully execute the **`spark_transform_data`** task, which reads data from S3, processes it with **PySpark** (running locally in the Docker environment for cost efficiency), and writes the clean data back to S3's staging area—the final step needed to showcase true **Big Data Engineering** competency! Stay tuned for Phase 2!
+
+
+Below I added some pictures during this project. My first Airflow and Snowflake!
+It looks complicated and I know that I will struggle.. But still I want to try to learn about these things.
+Hope I can finish this project with success!
+
+<img width="368" height="140" alt="스크린샷 2025-12-03 125341" src="https://github.com/user-attachments/assets/fb307464-728a-4082-8c76-7c98aa08a505" />
