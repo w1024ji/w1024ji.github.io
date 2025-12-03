@@ -65,4 +65,7 @@ Below I added some pictures during this project. My first Airflow and Snowflake!
 It looks complicated and I know that I will struggle.. But still I want to try to learn about these things.
 Hope I can finish this project with success!
 
-<img width="368" height="140" alt="스크린샷 2025-12-03 125341" src="https://github.com/user-attachments/assets/fb307464-728a-4082-8c76-7c98aa08a505" />
+![still failing with three stages](./photos/newprj-1.png)
+![finally success](./photos/newprj-2.png)
+![airflow full shot](./photos/newprj-3.png)
+![working on spark but failing](./photos/newprj-4-failing-with-spark.png)
