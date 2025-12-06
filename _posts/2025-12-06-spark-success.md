@@ -47,3 +47,14 @@ The decisive fix was to upgrade our EC2 instance to the **`m7i-flex.large`** typ
 By providing the necessary infrastructure, the upgrade eliminated all resource contention. The **`m7i-flex.large`** allowed the Spark application to run successfully without being terminated by the operating system, enabling us to isolate and resolve the final software configuration issues.
 
 The successful execution of all four tasks proves that robust data engineering requires not only elegant code but also **well-provisioned and appropriate infrastructure**.
+
+
+![spark in fail](./photos/failing_spark.png)
+
+![finally succeed](./photos/success1.png)
+
+![finally succeed2](./photos/success2.png)
+
+
+
+
