@@ -37,3 +37,9 @@ To salvage the project without moving to expensive clusters, I attempted to **li
 
 ## 6. Closing Thoughts
 I am closing this project not because the logic failed, but because I reached the physical limits of my current environment. This experience taught me the stark difference between "writing Spark code" and "managing Spark infrastructure." My next venture will begin with a distributed-first mindset.
+
+
+
+![tried to use big data](./photos/with_massive_data.png)
+
+![spark is the problem](./photos/spark_takes_a_lot_of_time.png)
