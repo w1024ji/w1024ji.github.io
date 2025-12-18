@@ -13,13 +13,10 @@ This project was an ambitious attempt to build an automated ETL pipeline for the
 
 ## 3. The Challenges & My Attempts to Solve Them
 
-### A. The "TabError" and Syntax Hurdles
-Early in the project, I struggled with persistent `TabError` and `AnalysisException`. Debugging the inconsistent use of tabs and spaces in Python, and correcting the sequence of Spark transformations (like renaming columns before applying functions), were the first major hurdles.
-
-### B. The Performance Bottleneck
+### A. The Performance Bottleneck
 The transformation task (`spark_transform_data`) consistently exceeded **1 hour**, even for relatively simple logic.
 
-### C. Scaling Down: The Last Stand
+### B. Scaling Down: The Last Stand
 To salvage the project without moving to expensive clusters, I attempted to **limit the data scope**:
 - **The Attempt:** Modified the ingestion logic to copy only a single year's file (`limited_files = all_files[:1]`) instead of the entire dataset.
 - **The Result:** Surprisingly, even with this drastically reduced data volume, the Spark execution time did not fall below the 1-hour mark.
