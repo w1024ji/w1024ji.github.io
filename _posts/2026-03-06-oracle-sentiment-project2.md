@@ -19,6 +19,9 @@ When the job is stuck with error, I go straight to CloudWatch - log management -
 
 <img width="1516" height="680" alt="image" src="https://github.com/user-attachments/assets/92ec559c-33e5-473c-9f1f-ab09b2464997" />
 
+<img width="1515" height="650" alt="image" src="https://github.com/user-attachments/assets/96657f5a-9159-4055-80ad-08ae0882c2f4" />
+
+
 
 
 오늘은 저번에 작성한 Glue Job 을 더 수정하고 s3 의 silver 폴더의 1.5 M 정도 되는 json 파일들을 생성했다.
