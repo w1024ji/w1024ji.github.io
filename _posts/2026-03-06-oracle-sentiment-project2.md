@@ -17,6 +17,9 @@ When the job is stuck with error, I go straight to CloudWatch - log management -
 
 ----
 
+<img width="1516" height="680" alt="image" src="https://github.com/user-attachments/assets/92ec559c-33e5-473c-9f1f-ab09b2464997" />
+
+
 
 오늘은 저번에 작성한 Glue Job 을 더 수정하고 s3 의 silver 폴더의 1.5 M 정도 되는 json 파일들을 생성했다.
 특히 footer 를 제외하니까 용량이 좀 더 가벼워지고 정돈되었다. footer 에 오라클 관련 단어가 포함된 단어가 있으니까 자꾸 silver -> gold 로 가는 파이썬 함수를 실행하면 관련 없는 기사들이 결과 csv 에 포함되길래 Glue Job 에서 footer 를 삭제하도록 했다. Silver 계층에 있는 데이터들을 '깨끗한 공통 텍스트' 로 만들고 싶었다.
