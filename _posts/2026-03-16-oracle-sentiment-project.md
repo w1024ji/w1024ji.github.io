@@ -23,9 +23,11 @@ Once it was succeeded, I made the Airflow to run in the background, so it won't 
 
 nohup airflow standalone > airflow_server.log 2>&1 &
 
+
 ----------
 
 
 And this is I saw in this morning!
 It is working well, the DAG succeeded in 8am in the morning.
 
+![airflow in the morningl](./photos/airflow success.png)
