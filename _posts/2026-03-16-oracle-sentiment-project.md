@@ -38,6 +38,11 @@ It is working well, the DAG succeeded in 8am in the morning.
 
 ![airflow in the morningl](./photos/airflow success.png)
 
+And the result is saved in S3. In the gold bucket.
+I can see that the data for 15th was uploaded in this morning.
+
+![s3 in the morningl](./photos/s3 after airflow.png)
+
 
 I am gonna wait for 2 weeks how it goes.
 Why 2 weeks? Cause it is my maxinum budget for AWS.
