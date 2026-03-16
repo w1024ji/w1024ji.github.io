@@ -1,2 +1,2 @@
 Here, you can read posts about my project.
-They are in the posts/ directory.
+They are in the _posts/ directory.
