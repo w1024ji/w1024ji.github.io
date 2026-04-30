@@ -29,11 +29,11 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         seen = {}
-        for **i, num** in **enumerate(nums)**:
+        for i, num in enumerate(nums):
             compare = target - num
 
             if compare in seen:
-                return **[seen[compare], i]**
+                return [seen[compare], i]
                 
             seen[num] = i
 ```
@@ -46,8 +46,8 @@ class Solution:
 ```python
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        s_sort = **sorted(s)**
-        t_sort = **sorted(t)**
+        s_sort = sorted(s)
+        t_sort = sorted(t)
 
         return s_sort == t_sort
 ```
@@ -61,14 +61,14 @@ class Solution:
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
         # 전체 len 을 찾고, 그게 총 숫자의 종류보다 크면 True 아닐까?
-        return len(nums) > len(**set(nums)**)       
+        return len(nums) > len(set(nums))       
 ```
 
 ### 4. Group Anagrams (Medium)
 
 - 저번처럼 set() 을 쓰려다가 그러면 같은 애너그램을 가진 것들끼리 그룹을 나눌 수 없어서 버리고,
 - 사실 join() 을 쓸 줄 아느냐 마느냐가 컸다. 그리고 딕셔너리를 편하게 활용하자!
-- **key = "".join(sorted(s))**
+- key = "".join(sorted(s))
 - 아마도 O(NlogN) 이다.
 
 ```python
@@ -76,12 +76,12 @@ class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         dicts = {}
         for s in strs:
-            **key = "".join(sorted(s))**
+            key = "".join(sorted(s))
 
             if key in dicts:
                 dicts[key].append(s)
             else:
-                dicts[key] = **[s] # 이렇게 넣어줘야지 리스트 형태로 저장된다**
+                dicts[key] = [s] # 이렇게 넣어줘야지 리스트 형태로 저장된다
 
         return list(dicts.values())
 ```
@@ -93,11 +93,11 @@ class Solution:
 - 종류와 빈도수를 정리한 dicts =  {2:2, 1:3, 3:1} 를 얻는 것까지는 성공. 하지만 여기서 어떻게 값을 기준으로 k번 까지 큰 키들을 가져올 수 있을까가 이 문제의 관건이었다.
 - *sorted_items = sorted(dicts.items(), key=lambda x:x[1], reverse=True)* 를 써봤지만 sorted() 때문에 O(NlogN) 이므로 실패.
 - heapq 가 솔루션이었다.
-- **import heapq** 한 다음에, heap = [] 을 만들고 힙큐에 튜플 형태로 (빈도수, 종류) 넣어준다. 그리고 **heappush(만든 힙, 튜플)** 그리고 **heappop(만든 힙)** 을 이용하면 문제를 풀 수 있었다.
+- import heapq 한 다음에, heap = [] 을 만들고 힙큐에 튜플 형태로 (빈도수, 종류) 넣어준다. 그리고 heappush(만든 힙, 튜플) 그리고 heappop(만든 힙) 을 이용하면 문제를 풀 수 있었다.
 - 마지막에 리턴할 때 힙에서 두번째 값(우리가 원하는 키)를 꺼내기 위해서는 for 문을 돌리면서 인덱스1번째를 가져와 리스트로 만드는 작업을 해야 한다.
 
 ```python
-**import heapq**
+import heapq
 
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
@@ -108,16 +108,16 @@ class Solution:
             else:
                 dicts[n] = 1
 
-        **heap = []**
+        heap = []
         for num, freq in dicts.items():
             # 힙에는 튜플 형태로 (기준점, 데이터)를 넣습니다.
             # 빈도수를 기준으로 비교해야 하니까 freq를 앞에 둡니다!
-            **heapq.heappush(heap, (freq, num))**
+            heapq.heappush(heap, (freq, num))
 
             if len(heap) > k:
-                **heapq.heappop(heap)**
+                heapq.heappop(heap)
 
-        **return [item[1] for item in heap]**
+        return [item[1] for item in heap]
 ```
 
 ### 6. Product of Array Except Self (Medium)
@@ -137,13 +137,13 @@ class Solution:
 
         for n in nums:
             answer.append(multiples) 
-            **multiples *= n**           
+            multiples *= n           
         
         multiples2 = 1
 
         for i in range(len(nums)-1, -1, -1):
             answer[i] *= multiples2
-            **multiples2 *= nums[i]**
+            multiples2 *= nums[i]
 
         return answer
 ```
