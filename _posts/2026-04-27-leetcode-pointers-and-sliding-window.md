@@ -1,3 +1,6 @@
+---
+category: "LeetCode"
+---
 ## Pointers & Sliding Windows
 ### 1. Valid Palindrome (Easy)
 

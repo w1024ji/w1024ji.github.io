@@ -1,3 +1,6 @@
+---
+category: "Oracle Sentiment Analysis"
+---
 It has been almost a week since I started this project.
 By the way, I am doing a graduation project in this semester (Capstone Project) with my teammates, and it looks more complicated than I expected.
 I hope I can have my time to do this oracle project while doing another (and big) project ... 

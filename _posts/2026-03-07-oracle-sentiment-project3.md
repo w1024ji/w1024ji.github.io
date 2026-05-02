@@ -1,3 +1,6 @@
+---
+category: "Oracle Sentiment Analysis"
+---
 오늘도 어김없이 문제가 있었다. 애매한 문제이다.
 AWS에 생활비를 쪼개 쓰고 있어서 glue job 으로 하는 와중에, 1월 데이터를 위해 10개의 warz 를 열었다.
 그리고 약 5MB 를 S3 버킷의 silver 폴더에 올리는 걸 성공했다. Spark를 사용했다. 약 20분이 걸렸다.

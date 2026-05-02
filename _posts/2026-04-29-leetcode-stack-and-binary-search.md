@@ -1,3 +1,6 @@
+---
+category: "LeetCode"
+---
 ## Stack & Bianry Search
 
 ### 1. Valid Parentheses (Easy)

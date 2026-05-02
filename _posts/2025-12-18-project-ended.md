@@ -1,3 +1,6 @@
+---
+category: "AWS Data Pipeline"
+---
 # Engineering Log: Why I Shelved My GHCN Data Pipeline (The Infrastructure Wall)
 
 ## 1. Introduction

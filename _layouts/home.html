@@ -3,83 +3,123 @@ layout: default
 ---
 <div class="home">
 
+  <!-- ── Hero ── -->
   <div class="home-hero">
-    <div class="bauhaus-bar">
-      <span class="bar-red"></span>
-      <span class="bar-blue"></span>
-      <span class="bar-yellow"></span>
+    <div class="hero-text">
+      <p class="hero-label">Personal Blog</p>
+      <h1 class="home-title">{{ site.title | escape }}</h1>
+      <p class="home-subtitle">{{ site.description | escape }}</p>
     </div>
-    <h1 class="home-title">{{ site.title | escape }}</h1>
-    <p class="home-subtitle">{{ site.description | escape }}</p>
+    <!-- Bauhaus 2×2 color grid -->
+    <div class="hero-geo" aria-hidden="true">
+      <div class="geo-red"></div>
+      <div class="geo-blue"></div>
+      <div class="geo-yellow"></div>
+      <div class="geo-black"></div>
+    </div>
   </div>
 
-  {%- if site.posts.size > 0 -%}
-  <h2 class="section-heading">Latest Posts</h2>
-  <ul class="post-list">
-    {%- for post in site.posts -%}
-    <li class="post-card">
+  <!-- ── Folder sections, newest category first ── -->
+  {%- assign ordered_categories = "LeetCode|Oracle Sentiment Analysis|AWS Data Pipeline|Getting Started" | split: "|" -%}
 
-      {%- comment -%}
-        Extract the first image src from the rendered post HTML.
-        If the src is a relative path (./photos/...), resolve it
-        against the post's URL directory.
-      {%- endcomment -%}
-      {%- assign _thumb_src = "" -%}
-      {%- if post.content contains 'src="' -%}
-        {%- assign _img_parts = post.content | split: 'src="' -%}
-        {%- if _img_parts.size > 1 -%}
-          {%- assign _raw_src = _img_parts[1] | split: '"' | first -%}
-          {%- comment -%}Only use actual images, not SVG data URIs or scripts{%- endcomment -%}
-          {%- unless _raw_src contains 'data:' -%}
-            {%- if _raw_src contains './' -%}
-              {%- comment -%}Resolve relative path using post URL directory{%- endcomment -%}
-              {%- assign _url_parts = post.url | split: '/' -%}
-              {%- assign _post_dir = '/' | append: _url_parts[1] | append: '/' | append: _url_parts[2] | append: '/' | append: _url_parts[3] -%}
-              {%- assign _clean_src = _raw_src | remove_first: './' -%}
-              {%- assign _thumb_src = _post_dir | append: '/' | append: _clean_src -%}
-            {%- else -%}
-              {%- assign _thumb_src = _raw_src -%}
-            {%- endif -%}
-          {%- endunless -%}
-        {%- endif -%}
-      {%- endif -%}
+  {%- for cat_name in ordered_categories -%}
+    {%- assign cat_posts = site.categories[cat_name] -%}
+    {%- if cat_posts.size > 0 -%}
 
-      {%- if _thumb_src != "" -%}
-      <div class="post-card-thumb">
-        <img
-          src="{{ _thumb_src }}"
-          alt="{{ post.title | escape }}"
-          loading="lazy"
-          onerror="this.closest('.post-card-thumb').classList.add('thumb-placeholder'); this.remove();"
-        >
-      </div>
+      {%- comment -%}Pick folder CSS class and slug for colors{%- endcomment -%}
+      {%- if cat_name == "LeetCode" -%}
+        {%- assign folder_class = "folder-leetcode" -%}
+      {%- elsif cat_name == "Oracle Sentiment Analysis" -%}
+        {%- assign folder_class = "folder-oracle" -%}
+      {%- elsif cat_name == "AWS Data Pipeline" -%}
+        {%- assign folder_class = "folder-aws" -%}
       {%- else -%}
-      <div class="post-card-thumb thumb-placeholder"></div>
+        {%- assign folder_class = "folder-start" -%}
       {%- endif -%}
 
-      <div class="post-card-body">
-        {%- assign _tags = post.tags -%}
-        {%- if _tags.size > 0 -%}
-        <span class="post-tag">{{ _tags | first }}</span>
-        {%- endif -%}
-        <h3 class="post-card-title">
-          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-        </h3>
-        <p class="post-card-meta">
-          <time datetime="{{ post.date | date_to_xmlschema }}">
-            {{ post.date | date: "%b %-d, %Y" }}
-          </time>
-        </p>
-        {%- assign _excerpt = post.excerpt | strip_html | strip_newlines | truncatewords: 28 -%}
-        {%- if _excerpt != "" -%}
-        <p class="post-card-excerpt">{{ _excerpt }}</p>
-        {%- endif -%}
-      </div>
+      {%- comment -%}Open the first category by default{%- endcomment -%}
+      {%- if forloop.first -%}
+        {%- assign open_attr = "open" -%}
+      {%- else -%}
+        {%- assign open_attr = "" -%}
+      {%- endif -%}
 
-    </li>
-    {%- endfor -%}
-  </ul>
-  {%- endif -%}
+      <details class="folder-section {{ folder_class }}" {{ open_attr }}>
+        <summary class="folder-header" aria-label="{{ cat_name }}, {{ cat_posts.size }} posts">
+          <div class="folder-stripe"></div>
+          <div class="folder-inner">
+            <span class="folder-name">{{ cat_name }}</span>
+            <span class="folder-count">{{ cat_posts.size }} POST{% if cat_posts.size != 1 %}S{% endif %}</span>
+            <span class="folder-chevron">▼</span>
+          </div>
+        </summary>
+
+        <div class="folder-content">
+          <div class="card-grid">
+            {%- for post in cat_posts -%}
+            <article class="post-card">
+
+              {%- comment -%}
+                Thumbnail extraction:
+                Look for src="..." in rendered HTML.
+                If the path starts with ./ resolve it against the post's URL directory.
+                GitHub-hosted images (https://...) work as-is.
+              {%- endcomment -%}
+              {%- assign _thumb = "" -%}
+              {%- if post.content contains 'src="' -%}
+                {%- assign _parts = post.content | split: 'src="' -%}
+                {%- if _parts.size > 1 -%}
+                  {%- assign _raw = _parts[1] | split: '"' | first -%}
+                  {%- unless _raw contains 'data:' -%}
+                    {%- if _raw contains './' -%}
+                      {%- assign _url_segs = post.url | split: '/' -%}
+                      {%- assign _dir = '/' | append: _url_segs[1] | append: '/' | append: _url_segs[2] | append: '/' | append: _url_segs[3] -%}
+                      {%- assign _clean = _raw | remove_first: './' -%}
+                      {%- assign _thumb = _dir | append: '/' | append: _clean -%}
+                    {%- else -%}
+                      {%- assign _thumb = _raw -%}
+                    {%- endif -%}
+                  {%- endunless -%}
+                {%- endif -%}
+              {%- endif -%}
+
+              {%- if _thumb != "" -%}
+              <div class="card-thumb">
+                <img
+                  src="{{ _thumb }}"
+                  alt="{{ post.title | escape }}"
+                  loading="lazy"
+                  onerror="this.closest('.card-thumb').outerHTML='<div class=\'card-thumb-placeholder\'></div>';"
+                >
+              </div>
+              <div class="card-thumb-bar"></div>
+              {%- else -%}
+              <div class="card-thumb-placeholder"></div>
+              {%- endif -%}
+
+              <div class="card-body">
+                <a class="card-title" href="{{ post.url | relative_url }}">
+                  {{ post.title | escape }}
+                </a>
+                <p class="card-meta">
+                  <time datetime="{{ post.date | date_to_xmlschema }}">
+                    {{ post.date | date: "%b %-d, %Y" }}
+                  </time>
+                </p>
+                {%- assign _exc = post.excerpt | strip_html | strip_newlines | truncatewords: 22 -%}
+                {%- if _exc != "" -%}
+                <p class="card-excerpt">{{ _exc }}</p>
+                {%- endif -%}
+              </div>
+
+            </article>
+            {%- endfor -%}
+          </div>
+        </div>
+      </details>
+
+    {%- endif -%}
+  {%- endfor -%}
 
   {{ content }}
 

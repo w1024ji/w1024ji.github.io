@@ -1,3 +1,6 @@
+---
+category: "Oracle Sentiment Analysis"
+---
 I started working with AWS Lambda for the articles on March.
 This time, I am not using Common Crawl - because it is for past news -, but use Google RSS news.
 Crawled past news of past 7 days, and tried to get the sentiment out of each article using TextBlob.

@@ -1,3 +1,6 @@
+---
+category: "Getting Started"
+---
 ## Hi! this is my first blog in Github blog!
 
 So.. i can add a code block like this:

@@ -1,3 +1,6 @@
+---
+category: "AWS Data Pipeline"
+---
 ## 🚀 Building a Modern Data Pipeline: AWS, Airflow and Snowflake (Phase 1 Complete!)
 
 Hey everyone! As a self-starting data engineer, I’ve been tackling a hands-on project to master the modern cloud data stack. I wanted to move beyond tutorials and build a robust, end-to-end (E2E) pipeline from scratch.

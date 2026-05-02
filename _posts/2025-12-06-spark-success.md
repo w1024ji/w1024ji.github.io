@@ -1,3 +1,6 @@
+---
+category: "AWS Data Pipeline"
+---
 ## E2E Data Pipeline Achieved: From S3 to Snowflake via PySpark
 
 I am so happy that all four tasks are running without failing.

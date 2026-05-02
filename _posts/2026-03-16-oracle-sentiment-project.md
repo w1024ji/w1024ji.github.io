@@ -1,3 +1,6 @@
+---
+category: "Oracle Sentiment Analysis"
+---
 Yesterday's goal: Let's automize crawling process!
 So, yesterday I set up EC2(ubuntu) in AWS and set up a Airflow inside that ubuntu.
 

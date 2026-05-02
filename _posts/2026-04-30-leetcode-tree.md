@@ -1,3 +1,6 @@
+---
+category: "LeetCode"
+---
 ## Tree
 
 ### 1. Invert Binary Tree (Easy)

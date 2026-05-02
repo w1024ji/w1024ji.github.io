@@ -1,3 +1,6 @@
+---
+category: "LeetCode"
+---
 ## Linked List
 ### 1. Reverse Linked List (Easy)
 

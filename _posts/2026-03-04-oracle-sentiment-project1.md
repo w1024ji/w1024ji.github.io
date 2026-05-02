@@ -1,3 +1,6 @@
+---
+category: "Oracle Sentiment Analysis"
+---
 # Oracle Sentiment Project - revenge for my stock - 
 
 1. 프로젝트 계기
