@@ -1,13 +1,13 @@
 ---
 category: "AWS Data Pipeline"
 ---
-## 🚀 Building a Modern Data Pipeline: AWS, Airflow and Snowflake (Phase 1 Complete!)
+## Building a Modern Data Pipeline: AWS, Airflow and Snowflake (Phase 1 Complete!)
 
 Hey everyone! As a self-starting data engineer, I’ve been tackling a hands-on project to master the modern cloud data stack. I wanted to move beyond tutorials and build a robust, end-to-end (E2E) pipeline from scratch.
 
 This post summarizes the setup and successful execution of **Phase 1** of my project: **The Global Weather Data Pipeline**.
 
-### 🎯 Project Goal & Core Technology Stack
+### Project Goal & Core Technology Stack
 
 The primary goal of this project is to create an automated **ETL (Extract, Transform, Load) workflow** to ingest global data, process it in the cloud, and store it in a production-ready data warehouse for analysis.
 
@@ -21,7 +21,7 @@ Here's the powerful stack we chose to work with:
 | **Big Data Processing** | **Apache Spark** | (Future Phase) Cleans, validates, and transforms large datasets. |
 
 
-## 🏗️ Phase 1: Overcoming Environment Hell and Achieving First Success
+## Phase 1: Overcoming Environment Hell and Achieving First Success
 
 The first phase was dedicated to overcoming "environment hell"—the notoriously difficult process of getting all these complex systems to talk to each other.
 
@@ -40,7 +40,7 @@ We successfully configured the security and access layers:
 * **Cloud Connections:** We configured Airflow's **Connections** menu with the required **AWS IAM Access Keys** and **Snowflake User Credentials** to ensure secure communication.
 
 
-## ✅ Phase 1: Pipeline Execution (E2E Success!)
+## Phase 1: Pipeline Execution (E2E Success!)
 
 After all the setup, we wrote our first basic Directed Acyclic Graph (**DAG**), named **`spark_weather_pipeline`**, and executed it successfully!
 
@@ -53,7 +53,7 @@ After all the setup, we wrote our first basic Directed Acyclic Graph (**DAG**), 
 **Status:** The entire three-step process ran green! The foundational ETL pipeline connecting **Airflow to S3 and then to Snowflake** is now fully functional.
 
 
-## ⏭️ Next Steps: Bringing in the Big Gun (Apache Spark)
+## Next Steps: Bringing in the Big Gun (Apache Spark)
 
 While the pipeline works, the current data transformation is basic. The next, most important phase is to integrate **Apache Spark** to handle advanced data cleaning and validation.
 
