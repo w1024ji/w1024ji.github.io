@@ -87,7 +87,7 @@ layout: default
               <div class="card-thumb">
                 <img
                   src="{{ _thumb }}"
-                  alt="{{ post.title | escape }}"
+                  alt="{{ post.title | replace: '&amp;', '&' | escape }}"
                   loading="lazy"
                   onerror="this.closest('.card-thumb').outerHTML='<div class=\'card-thumb-placeholder\'></div>';"
                 >
@@ -99,7 +99,7 @@ layout: default
 
               <div class="card-body">
                 <a class="card-title" href="{{ post.url | relative_url }}">
-                  {{ post.title | escape }}
+                  {{ post.title | replace: '&amp;', '&' | escape }}
                 </a>
                 <p class="card-meta">
                   <time datetime="{{ post.date | date_to_xmlschema }}">
