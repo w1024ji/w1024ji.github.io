@@ -1,0 +1,86 @@
+---
+layout: default
+---
+<div class="home">
+
+  <div class="home-hero">
+    <div class="bauhaus-bar">
+      <span class="bar-red"></span>
+      <span class="bar-blue"></span>
+      <span class="bar-yellow"></span>
+    </div>
+    <h1 class="home-title">{{ site.title | escape }}</h1>
+    <p class="home-subtitle">{{ site.description | escape }}</p>
+  </div>
+
+  {%- if site.posts.size > 0 -%}
+  <h2 class="section-heading">Latest Posts</h2>
+  <ul class="post-list">
+    {%- for post in site.posts -%}
+    <li class="post-card">
+
+      {%- comment -%}
+        Extract the first image src from the rendered post HTML.
+        If the src is a relative path (./photos/...), resolve it
+        against the post's URL directory.
+      {%- endcomment -%}
+      {%- assign _thumb_src = "" -%}
+      {%- if post.content contains 'src="' -%}
+        {%- assign _img_parts = post.content | split: 'src="' -%}
+        {%- if _img_parts.size > 1 -%}
+          {%- assign _raw_src = _img_parts[1] | split: '"' | first -%}
+          {%- comment -%}Only use actual images, not SVG data URIs or scripts{%- endcomment -%}
+          {%- unless _raw_src contains 'data:' -%}
+            {%- if _raw_src contains './' -%}
+              {%- comment -%}Resolve relative path using post URL directory{%- endcomment -%}
+              {%- assign _url_parts = post.url | split: '/' -%}
+              {%- assign _post_dir = '/' | append: _url_parts[1] | append: '/' | append: _url_parts[2] | append: '/' | append: _url_parts[3] -%}
+              {%- assign _clean_src = _raw_src | remove_first: './' -%}
+              {%- assign _thumb_src = _post_dir | append: '/' | append: _clean_src -%}
+            {%- else -%}
+              {%- assign _thumb_src = _raw_src -%}
+            {%- endif -%}
+          {%- endunless -%}
+        {%- endif -%}
+      {%- endif -%}
+
+      {%- if _thumb_src != "" -%}
+      <div class="post-card-thumb">
+        <img
+          src="{{ _thumb_src }}"
+          alt="{{ post.title | escape }}"
+          loading="lazy"
+          onerror="this.closest('.post-card-thumb').classList.add('thumb-placeholder'); this.remove();"
+        >
+      </div>
+      {%- else -%}
+      <div class="post-card-thumb thumb-placeholder"></div>
+      {%- endif -%}
+
+      <div class="post-card-body">
+        {%- assign _tags = post.tags -%}
+        {%- if _tags.size > 0 -%}
+        <span class="post-tag">{{ _tags | first }}</span>
+        {%- endif -%}
+        <h3 class="post-card-title">
+          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        </h3>
+        <p class="post-card-meta">
+          <time datetime="{{ post.date | date_to_xmlschema }}">
+            {{ post.date | date: "%b %-d, %Y" }}
+          </time>
+        </p>
+        {%- assign _excerpt = post.excerpt | strip_html | strip_newlines | truncatewords: 28 -%}
+        {%- if _excerpt != "" -%}
+        <p class="post-card-excerpt">{{ _excerpt }}</p>
+        {%- endif -%}
+      </div>
+
+    </li>
+    {%- endfor -%}
+  </ul>
+  {%- endif -%}
+
+  {{ content }}
+
+</div>
