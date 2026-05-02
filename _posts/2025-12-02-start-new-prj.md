@@ -69,17 +69,17 @@ It looks complicated and I know that I will struggle.. But still I want to try t
 Hope I can finish this project with success!
 
 ### still failing with three stages
-![still failing with three stages](./photos/newprj-1.png)
+![still failing with three stages](/photos/newprj-1.png)
 
 ### finally success!
-![finally success](./photos/newprj-2.png)
+![finally success](/photos/newprj-2.png)
 
 ### airflow full shot
-![airflow full shot](./photos/newprj-3.png)
+![airflow full shot](/photos/newprj-3.png)
 
 ### working on spark but failing :(
-![working on spark but failing](./photos/newprj-4-failing-with-spark.png)
+![working on spark but failing](/photos/newprj-4-failing-with-spark.png)
 
 
 ### overview of current status
-![overview](./photos/airflow-prj-overview.png)
+![overview](/photos/airflow-prj-overview.png)

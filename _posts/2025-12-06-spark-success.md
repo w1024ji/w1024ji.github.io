@@ -55,11 +55,11 @@ Below are the screenshots I took.
 It took a lot to solve with task on spark.
 
 
-![spark in fail](./photos/failing_spark.png)
+![spark in fail](/photos/failing_spark.png)
 
-![finally succeed](./photos/success1.png)
+![finally succeed](/photos/success1.png)
 
-![finally succeed2](./photos/success2.png)
+![finally succeed2](/photos/success2.png)
 
 
 

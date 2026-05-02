@@ -40,6 +40,6 @@ I am closing this project not because the logic failed, but because I reached th
 
 
 
-![tried to use big data](./photos/with_massive_data.png)
+![tried to use big data](/photos/with_massive_data.png)
 
-![spark is the problem](./photos/spark_takes_a_lot_of_time.png)
+![spark is the problem](/photos/spark_takes_a_lot_of_time.png)

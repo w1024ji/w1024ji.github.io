@@ -39,12 +39,12 @@ Once it was succeeded, I made the Airflow to run in the background, so it won't 
 And this is I saw in this morning!
 It is working well, the DAG succeeded in 8am in the morning.
 
-![airflow in the morningl](./photos/airflow success.png)
+![airflow in the morningl](/photos/airflow success.png)
 
 And the result is saved in S3. In the gold bucket.
 I can see that the data for 15th was uploaded in this morning.
 
-![s3 in the morningl](./photos/s3 after airflow.png)
+![s3 in the morningl](/photos/s3 after airflow.png)
 
 
 I am gonna wait for 2 weeks how it goes.
