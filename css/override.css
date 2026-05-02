@@ -494,9 +494,6 @@ details[open] .folder-chevron { transform: rotate(180deg); }
 
 .post-content pre {
   border-left: 5px solid var(--blue) !important;
-  border-top: 1px solid var(--gray-mid) !important;
-  border-right: 1px solid var(--gray-mid) !important;
-  border-bottom: 1px solid var(--gray-mid) !important;
   border-radius: 0 !important;
   padding: 0 !important;
   overflow-x: auto;
@@ -504,11 +501,13 @@ details[open] .folder-chevron { transform: rotate(180deg); }
   background: transparent !important;
 }
 
-/* Let highlight.js github.css handle all colors inside pre code */
-.post-content pre code {
+/* Let highlight.js CDN theme control all colors — only enforce font size */
+.post-content pre code.hljs {
   border: none !important;
-  font-size: 0.875em;
   border-radius: 0 !important;
+  font-size: 0.875em !important;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace !important;
+  line-height: 1.6 !important;
 }
 
 hr {
