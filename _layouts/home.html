@@ -20,7 +20,7 @@ layout: default
   </div>
 
   <!-- ── Folder sections, newest category first ── -->
-  {%- assign ordered_categories = "LeetCode|Oracle Sentiment Analysis|AWS Data Pipeline|Getting Started" | split: "|" -%}
+  {%- assign ordered_categories = "LeetCode|Semiconductor Sentiment|Oracle Sentiment Analysis|AWS Data Pipeline|Getting Started" | split: "|" -%}
 
   {%- for cat_name in ordered_categories -%}
     {%- assign cat_posts = site.categories[cat_name] -%}
@@ -29,6 +29,8 @@ layout: default
       {%- comment -%}Pick folder CSS class and slug for colors{%- endcomment -%}
       {%- if cat_name == "LeetCode" -%}
         {%- assign folder_class = "folder-leetcode" -%}
+      {%- elsif cat_name == "Semiconductor Sentiment" -%}
+        {%- assign folder_class = "folder-start" -%}
       {%- elsif cat_name == "Oracle Sentiment Analysis" -%}
         {%- assign folder_class = "folder-oracle" -%}
       {%- elsif cat_name == "AWS Data Pipeline" -%}
