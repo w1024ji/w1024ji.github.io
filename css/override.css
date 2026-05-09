@@ -226,10 +226,10 @@ details.folder-section > summary::marker { display: none; }
 details[open] .folder-chevron { transform: rotate(180deg); }
 
 /* Category color assignments */
-.folder-leetcode    .folder-stripe { background: var(--blue); }
-.folder-oracle      .folder-stripe { background: var(--red); }
-.folder-aws         .folder-stripe { background: var(--yellow); }
-.folder-start       .folder-stripe { background: var(--black); }
+.folder-blue    .folder-stripe { background: var(--blue); }
+.folder-red      .folder-stripe { background: var(--red); }
+.folder-yellow         .folder-stripe { background: var(--yellow); }
+.folder-black       .folder-stripe { background: var(--black); }
 
 /* ── Card Grid (inside open folder) ───────────────────── */
 .folder-content {
@@ -260,10 +260,10 @@ details[open] .folder-chevron { transform: rotate(180deg); }
 }
 
 /* Hover shadow color per category */
-.folder-leetcode .post-card:hover { box-shadow: 6px 6px 0 var(--blue); }
-.folder-oracle   .post-card:hover { box-shadow: 6px 6px 0 var(--red); }
-.folder-aws      .post-card:hover { box-shadow: 6px 6px 0 var(--yellow); }
-.folder-start    .post-card:hover { box-shadow: 6px 6px 0 var(--black); }
+.folder-blue .post-card:hover { box-shadow: 6px 6px 0 var(--blue); }
+.folder-red   .post-card:hover { box-shadow: 6px 6px 0 var(--red); }
+.folder-yellow      .post-card:hover { box-shadow: 6px 6px 0 var(--yellow); }
+.folder-black    .post-card:hover { box-shadow: 6px 6px 0 var(--black); }
 
 /* ── Thumbnail ─────────────────────────────────────────── */
 .card-thumb {
@@ -291,10 +291,10 @@ details[open] .folder-chevron { transform: rotate(180deg); }
   width: 100%;
 }
 
-.folder-leetcode .card-thumb-bar { background: var(--blue); }
-.folder-oracle   .card-thumb-bar { background: var(--red); }
-.folder-aws      .card-thumb-bar { background: var(--yellow); }
-.folder-start    .card-thumb-bar { background: var(--black); }
+.folder-blue .card-thumb-bar { background: var(--blue); }
+.folder-red   .card-thumb-bar { background: var(--red); }
+.folder-yellow      .card-thumb-bar { background: var(--yellow); }
+.folder-black    .card-thumb-bar { background: var(--black); }
 
 /* Placeholder when no image */
 .card-thumb-placeholder {
@@ -302,10 +302,10 @@ details[open] .folder-chevron { transform: rotate(180deg); }
   height: 8px;
 }
 
-.folder-leetcode .card-thumb-placeholder { background: var(--blue); }
-.folder-oracle   .card-thumb-placeholder { background: var(--red); }
-.folder-aws      .card-thumb-placeholder { background: var(--yellow); }
-.folder-start    .card-thumb-placeholder { background: var(--black); }
+.folder-blue .card-thumb-placeholder { background: var(--blue); }
+.folder-red   .card-thumb-placeholder { background: var(--red); }
+.folder-yellow      .card-thumb-placeholder { background: var(--yellow); }
+.folder-black    .card-thumb-placeholder { background: var(--black); }
 
 /* ── Card Body ─────────────────────────────────────────── */
 .card-body {
