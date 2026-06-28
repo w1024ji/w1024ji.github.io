@@ -29,7 +29,7 @@ layout: default
       {%- comment -%}Pick folder CSS class and slug for colors{%- endcomment -%}
       {%- if cat_name == "Orderflow" -%}
         {%- assign folder_class = "folder-red" -%}
-      {%- if cat_name == "Linux" -%}
+      {%- elsif cat_name == "Linux" -%}
         {%- assign folder_class = "folder-yellow" -%}
       {%- elsif cat_name == "Semiconductor Sentiment" -%}
         {%- assign folder_class = "folder-black" -%}
