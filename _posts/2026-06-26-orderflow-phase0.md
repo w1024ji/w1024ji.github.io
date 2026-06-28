@@ -2,7 +2,7 @@
 category: "Orderflow"
 ---
 
-# OrderFlow 개발기 — Phase 0: Kafka 띄우는 데 하루 썼다
+# Phase 0: Kafka 띄우는 데 하루 썼다
 
 오늘 새 프로젝트를 시작했다. 실시간 암호화폐 호가 데이터를 처리하는 스트리밍 파이프라인인데, 이름은 일단 **OrderFlow**로 정했다. 첫 번째 할 일은 minikube 위에 Kafka를 올리는 것. "별거 있겠어, helm으로 후딱 깔면 되지" 했는데... 하루를 다 썼다. 뭘 만났는지 기록해둔다.
 
